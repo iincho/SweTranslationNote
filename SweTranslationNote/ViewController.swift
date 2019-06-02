@@ -52,8 +52,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var translateStateLabel: UILabel!
     
-    private var inputLanguage: TranslateLanguage = .JA
-    private var outputLanguage: TranslateLanguage = .EN
+    private var inputLanguage: TranslateLanguage = .ja
+    private var outputLanguage: TranslateLanguage = .en
     
     private var translateStateRelay = BehaviorRelay<TranslateState>(value: .none)
     private var disposeBag = DisposeBag()
