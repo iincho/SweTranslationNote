@@ -81,6 +81,9 @@ PODS:
   - RxCocoa (5.0.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxOptional (4.0.0):
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
   - RxRelay (5.0.0):
     - RxSwift (~> 5)
   - RxSwift (5.0.0)
@@ -90,6 +93,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/MLNLTranslate
   - RxCocoa
+  - RxOptional
   - RxSwift
   - SnapKit
 
@@ -110,6 +114,7 @@ SPEC REPOS:
     - nanopb
     - Protobuf
     - RxCocoa
+    - RxOptional
     - RxRelay
     - RxSwift
     - SnapKit
@@ -130,10 +135,11 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxOptional: 9904e2219d59260c3c171273d475b2126de187e8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: 2ec6fd033a6d4e164093def4c03b7e4f709a6b02
+PODFILE CHECKSUM: 33550ab8c7ff7f909578808c9ce48f00e325ce9a
 
 COCOAPODS: 1.6.1

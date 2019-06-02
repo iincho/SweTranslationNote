@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="718"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7c7-ga-Kfp">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="356"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LUr-dO-epF" userLabel="Translation Base Stack View">
-                                                <rect key="frame" x="16" y="0.0" width="382" height="400"/>
+                                                <rect key="frame" x="16" y="0.0" width="382" height="356"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-2i-kdO" userLabel="Input Language View">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="36"/>
@@ -57,18 +57,18 @@
                                                         </constraints>
                                                     </view>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mBm-5D-0ut">
-                                                        <rect key="frame" x="0.0" y="36" width="382" height="150"/>
+                                                        <rect key="frame" x="0.0" y="36" width="382" height="128"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" priority="999" constant="150" id="6rK-xQ-tZk"/>
-                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="i4S-Nj-lin"/>
+                                                            <constraint firstAttribute="height" priority="999" constant="128" id="6rK-xQ-tZk"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="i4S-Nj-lin"/>
                                                         </constraints>
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uW3-fw-fB0">
-                                                        <rect key="frame" x="0.0" y="186" width="382" height="36"/>
+                                                        <rect key="frame" x="0.0" y="164" width="382" height="36"/>
                                                         <subviews>
                                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3XU-Hm-H12">
                                                                 <rect key="frame" x="103.5" y="8" width="20" height="20"/>
@@ -90,7 +90,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6r8-dE-Fu5" userLabel="Output Language View">
-                                                        <rect key="frame" x="0.0" y="222" width="382" height="28"/>
+                                                        <rect key="frame" x="0.0" y="200" width="382" height="28"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtL-8O-Hrz" userLabel="title Label">
                                                                 <rect key="frame" x="0.0" y="4" width="63" height="20.5"/>
@@ -119,11 +119,11 @@
                                                         </constraints>
                                                     </view>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aYK-1t-mCQ">
-                                                        <rect key="frame" x="0.0" y="250" width="382" height="150"/>
+                                                        <rect key="frame" x="0.0" y="228" width="382" height="128"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" priority="999" constant="150" id="f6V-l2-F3z"/>
-                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="y8J-lp-sTj"/>
+                                                            <constraint firstAttribute="height" priority="999" constant="128" id="f6V-l2-F3z"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="y8J-lp-sTj"/>
                                                         </constraints>
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>

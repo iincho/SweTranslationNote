@@ -11,7 +11,9 @@ import Firebase
 import FirebaseMLCommon
 
 enum DownloadState {
-    case none, processing, downloaded
+    case none
+    case processing(Progress)
+    case downloaded
 }
 
 struct DownloadLanguageObject {
@@ -131,7 +133,6 @@ extension DownloadLanguageViewController: UITableViewDelegate, UITableViewDataSo
         switch data.state {
         case .downloaded:
             /// Delete Model
-            dataList[indexPath.row].state = .processing
             tableView.reloadRows(at: [indexPath], with: .none)
             let deleteModel = TranslateRemoteModel.translateRemoteModel(language: data.type)
             ModelManager.modelManager().deleteDownloadedTranslateModel(deleteModel) { [weak self] error in
@@ -150,7 +151,6 @@ extension DownloadLanguageViewController: UITableViewDelegate, UITableViewDataSo
             break
         case .none:
             /// Download Model
-            dataList[indexPath.row].state = .processing
             tableView.reloadRows(at: [indexPath], with: .automatic)
             let dlModel = TranslateRemoteModel.translateRemoteModel(
                 app: FirebaseApp.app()!,
@@ -159,7 +159,12 @@ extension DownloadLanguageViewController: UITableViewDelegate, UITableViewDataSo
                     allowsCellularAccess: true,
                     allowsBackgroundDownloading: true
             ))
-            let _ = ModelManager.modelManager().download(dlModel)
+            let progress = ModelManager.modelManager().download(dlModel)
+            /// このprogressを監視しても0.0 or 1.0のどちらかしか返却されずProgressViewの更新には使えない
+            dataList[indexPath.row].state = .processing(progress)
+            if let cell = tableView.cellForRow(at: indexPath) as? DownloadLanguageCell {
+                cell.configure(type: data.type, state: .processing(progress))
+            }
         }
     }
 }

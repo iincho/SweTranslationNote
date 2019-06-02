@@ -9,6 +9,9 @@
 import UIKit
 import Firebase
 import FirebaseMLCommon
+import RxSwift
+import RxCocoa
+import RxOptional
 
 class DownloadLanguageCell: UITableViewCell {
 
@@ -18,7 +21,10 @@ class DownloadLanguageCell: UITableViewCell {
     @IBOutlet weak var dlStackView: UIStackView!
     @IBOutlet weak var downloadedLabel: UILabel!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var dlLabel: UILabel!
+    
+    private let disposeBag = DisposeBag()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,12 +46,20 @@ class DownloadLanguageCell: UITableViewCell {
         downloadedLabel.isHidden = true
         dlLabel.isHidden = true
         indicator.isHidden = true
+        progressView.isHidden = true
         switch state {
         case .downloaded:
             downloadedLabel.isHidden = false
-        case .processing:
+        case .processing(let progress):
             indicator.isHidden = false
             indicator.startAnimating()
+            progressView.isHidden = false
+            progress.rx.observe(Double.self, "fractionCompleted")
+                .filterNil()
+                .map { Float($0) }
+                .observeOn(MainScheduler.instance)
+                .bind(to: progressView.rx.progress)
+                .disposed(by: disposeBag)
         case .none:
             dlLabel.isHidden = false
         }

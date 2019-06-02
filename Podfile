@@ -5,5 +5,6 @@ target 'SweTranslationNote' do
   pod 'Firebase/MLNLTranslate'
   pod 'RxSwift' 
   pod 'RxCocoa'
+  pod 'RxOptional'
   pod 'SnapKit' 
 end

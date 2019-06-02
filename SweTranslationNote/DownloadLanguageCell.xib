@@ -15,45 +15,51 @@
         <tableViewCell contentMode="scaleToFill" restorationIdentifier="DownloadLanguageViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="KGk-i7-Jjw" customClass="DownloadLanguageCell" customModule="SweTranslationNote" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Japanese" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ql6-0b-xKE">
-                        <rect key="frame" x="16" y="11.5" width="83.5" height="21.5"/>
+                        <rect key="frame" x="16" y="11" width="83.5" height="21.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hF3-9F-OvW">
-                        <rect key="frame" x="165.5" y="0.0" width="138.5" height="44.5"/>
+                        <rect key="frame" x="166.5" y="0.0" width="137.5" height="43.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htg-wz-zcc">
-                                <rect key="frame" x="0.0" y="0.0" width="22.5" height="44.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <rect key="frame" x="0.0" y="0.0" width="21.5" height="43.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloaded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5z-dq-6GY">
-                                <rect key="frame" x="22.5" y="0.0" width="96" height="44.5"/>
+                                <rect key="frame" x="21.5" y="0.0" width="96" height="43.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="LW7-D0-Y7E">
-                                <rect key="frame" x="118.5" y="0.0" width="20" height="44.5"/>
+                                <rect key="frame" x="117.5" y="0.0" width="20" height="43.5"/>
                             </activityIndicatorView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="44" id="fVE-gy-Bak"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="44" id="fVE-gy-Bak"/>
                         </constraints>
                     </stackView>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vgP-Kq-YbI">
+                        <rect key="frame" x="0.0" y="41.5" width="320" height="2"/>
+                    </progressView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ql6-0b-xKE" firstAttribute="centerY" secondItem="hF3-9F-OvW" secondAttribute="centerY" id="8pm-pA-KVT"/>
                     <constraint firstItem="ql6-0b-xKE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="A5y-f6-cBE"/>
+                    <constraint firstItem="vgP-Kq-YbI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="HAs-6k-bUT"/>
                     <constraint firstAttribute="bottom" secondItem="hF3-9F-OvW" secondAttribute="bottom" id="HYl-1r-gQk"/>
                     <constraint firstItem="hF3-9F-OvW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ql6-0b-xKE" secondAttribute="trailing" constant="8" id="QU3-Rf-Idt"/>
+                    <constraint firstAttribute="bottom" secondItem="vgP-Kq-YbI" secondAttribute="bottom" id="Tck-PB-WGx"/>
+                    <constraint firstAttribute="trailing" secondItem="vgP-Kq-YbI" secondAttribute="trailing" id="dfk-C1-vTH"/>
                     <constraint firstAttribute="trailing" secondItem="hF3-9F-OvW" secondAttribute="trailing" constant="16" id="obT-RB-klg"/>
                     <constraint firstItem="hF3-9F-OvW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tlu-zV-Mwa"/>
                 </constraints>
@@ -65,6 +71,7 @@
                 <outlet property="downloadedLabel" destination="v5z-dq-6GY" id="S6g-56-33s"/>
                 <outlet property="indicator" destination="LW7-D0-Y7E" id="aSz-Ry-8W8"/>
                 <outlet property="languageLabel" destination="ql6-0b-xKE" id="6ef-5F-Thn"/>
+                <outlet property="progressView" destination="vgP-Kq-YbI" id="TTb-Pb-3Ir"/>
             </connections>
         </tableViewCell>
     </objects>
