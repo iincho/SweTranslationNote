@@ -21,7 +21,7 @@ final class PickerViewController: UIViewController {
         setupPickerView()
     }
     
-    func setup(selectedLanguage: TranslateLanguage, handler: ((TranslateLanguage) -> Void)?) {
+    func setup(selectedLanguage: TranslateLanguage, handler: @escaping ((TranslateLanguage) -> Void)) {
         self.selectedLanguage = selectedLanguage
         selectedHandler = handler
     }

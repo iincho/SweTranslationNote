@@ -69,12 +69,12 @@ class ViewController: UIViewController {
         inputTextView.layer.borderColor = UIColor.gray.cgColor
         inputTextView.layer.borderWidth = 1
         inputTextView.layer.cornerRadius = 4
-        inputLanguageButton.setTitle(inputLanguage.title, for: .normal)
         
         outputTextView.layer.borderColor = UIColor.gray.cgColor
         outputTextView.layer.borderWidth = 1
         outputTextView.layer.cornerRadius = 4
-        outputLanguageButton.setTitle(outputLanguage.title, for: .normal)
+        
+        refreshLanguage()
         
         translateStateRelay
             .asDriver()
@@ -88,12 +88,17 @@ class ViewController: UIViewController {
         inputTextView.rx.text
             .orEmpty
             .distinctUntilChanged()
-            .debounce(.milliseconds(4), scheduler: MainScheduler.instance)
+            .debounce(.milliseconds(400), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
                 self?.translation()
             }).disposed(by: disposeBag)
     
         title = "Translation"
+    }
+    
+    func refreshLanguage() {
+        inputLanguageButton.setTitle(inputLanguage.title, for: .normal)
+        outputLanguageButton.setTitle(outputLanguage.title, for: .normal)
     }
     
     func setupNotificationCenter() {
@@ -139,8 +144,9 @@ class ViewController: UIViewController {
                 case .output:
                     self.outputLanguage = language
                 }
-                self.setupViews()
+                self.refreshLanguage()
                 self.outputTextView.text = ""
+                self.translation()
             }
         }
         
